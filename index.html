@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<!--
+exports:
+    class title -> title, header
+    class sidebar -> sidebar container
+    class content -> content container
+-->
+<html>
+<head>
+<title id="title"></title>
+<link rel="stylesheet" href="main.css">
+<script type="text/javascript" src="fe.js"></script>
+</head>
+<body>
+
+<div id="sidebar"></div>
+<div id="content"></div>
+<div class="header">
+    <div class="header-left">
+        <a href="/"><h3 class="header-title">OPINIONS</h3></a>
+    </div>
+    <div class="header-right">
+        <h3 id="header-title"></h3>
+    </div>
+</div>
+<script>
+generate();
+</script> 
+</body>
+</html>

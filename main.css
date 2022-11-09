@@ -1,0 +1,61 @@
+a:link
+{
+    text-decoration: none;
+}
+#sidebar
+{
+    background-color: rgb(250, 250, 250);
+    height: 100%;
+    left: 0%;
+    width: 20%;
+    top: 10%;
+    background-color: white;
+    position: fixed;
+    display: block;
+}
+#content
+{
+    border-left: .1em solid black;
+    background-color: rgb(245, 245, 245);
+    height: 100%;
+    left: 20%;
+    top: 10%;
+    width: 80%;
+    position: fixed;
+    display: block;
+}
+.header-left
+{
+    text-align: center;
+    left: 0%;
+    width: 20%;
+    top: 0%;
+    height: 10%;
+    position: fixed;
+    background-color: rgb(245, 245, 245);
+}
+.header-left:hover
+{
+    background-color: rgb(250, 250, 250);
+}
+.header-right
+{
+    left: 20%;
+    width: 80%;
+    top: 0%;
+    height: 10%;
+    position: fixed;
+    background-color: rgb(250, 250, 250);
+
+}
+.sidebar-entry
+{
+    text-align: center;
+    background-color: rgb(250, 250, 250);
+    width: 100%;
+    border: .05em solid black;
+}
+.sidebar-entry:hover
+{
+    background-color: rgb(245, 245, 245);
+}
