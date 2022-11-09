@@ -1,13 +1,13 @@
-function generate()
+console.log("running~");
+
+let inited = false;
+let b = fetch("/opinions.json")
+.then(res => res.text())
+.then(res => JSON.parse(res))
+
+function generate(loc)
 {
-    console.log("running~");
-
-    let loc = window.location.search.substr(1);
-
-    fetch("/opinions.json")
-    .then(res => res.text())
-    .then(res => JSON.parse(res))
-    .then(function(brain) {
+    b.then(function(brain) {
         if (brain[loc] == undefined) {loc = "";}
 
         document.getElementById("title")
@@ -19,22 +19,19 @@ function generate()
         document.getElementById("content")
         .innerHTML = brain[loc]["content"];
 
+        if (inited) {return}
         Object.keys(brain).forEach(function(frag) {
             if (frag == "") {return}
 
             let item = document.createElement("div");
             item.className = "sidebar-entry";
             item.innerText = brain[frag]["title"]
-
-            let wrap = document.createElement("a")
-            wrap.href = "/?"+frag;
-            wrap.appendChild(item);
+            item.onclick = function() {generate(frag)};
 
             document.getElementById("sidebar")
-            .appendChild(wrap)
-
-            console.log(frag);
+            .appendChild(item)
         });
+        inited = true;
     });
 
 }
