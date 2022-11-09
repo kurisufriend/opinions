@@ -16,6 +16,8 @@ function generate(loc)
         document.getElementById("header-title")
         .innerHTML = brain[loc]["title"];
 
+        history.pushState(history.state, loc, "/?"+loc);
+
         document.getElementById("content")
         .innerHTML = brain[loc]["content"];
 
